@@ -1,8 +1,6 @@
 # Mémoire de M2 TNAH — Clara Martin
 
-## À demeure, en partage
-
-*Conservation in situ et diffusion en réseau des archives historiques d’une institution universitaire. Le cas de la Faculté de médecine de l’Université de Montpellier.*
+*À demeure, en partage, conservation in situ et diffusion en réseau des archives historiques d’une institution universitaire. Le cas de la Faculté de médecine de l’Université de Montpellier.*
 
 Mémoire réalisé dans le cadre du Master 2 Technologies numériques appliquées à l'histoire (École nationale des chartes – PSL), année universitaire 2025-2026.
 
