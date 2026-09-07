@@ -57,10 +57,18 @@ Ils comprennent notamment :
 - la réalisation directe en LaTeX, avec TikZ, du graphe de modélisation CIDOC CRM présenté en annexe, avec définition de styles de nœuds et représentation des relations entre entités ;
 - la personnalisation des en-têtes et pieds de page avec `fancyhdr`, en distinguant pages paires et impaires ;
 - la création des commandes personnelles `\chapitrecourt` et `\sectioncourte`, qui permettent d'employer dans les en-têtes des versions abrégées des titres sans modifier les titres développés dans le corps du mémoire ni leurs entrées dans la table des matières ;
-- la génération d'un glossaire et d'une liste de sigles avec `glossaries` ;
 - l'utilisation de `cleveref`, en complément de `hyperref`, pour améliorer et harmoniser les renvois internes. Ce package constitue notamment un ajout par rapport aux éléments étudiés dans le cours.
 
-Ces adaptations visent à conserver une source structurée et réutilisable tout en répondant aux contraintes particulières d'un mémoire comportant de nombreux tableaux, schémas, annexes, références croisées et éléments destinés à une consultation à la fois numérique et imprimée.
+Ces adaptations répondent aux contraintes particulières d'un mémoire comportant de nombreux tableaux, schémas, annexes et références croisées, et destiné à une consultation à la fois numérique et imprimée.
+
+### Documentation consultée
+
+- `tabularx` : https://ctan.org/pkg/tabularx
+- `rotating` : https://ctan.org/pkg/rotating
+- `pdflscape` : https://ctan.org/pkg/pdflscape
+- PGF/TikZ : https://pgf-tikz.github.io/pgf/pgfmanual.pdf
+- `fancyhdr` : https://ctan.org/pkg/fancyhdr
+- `cleveref` : https://ctan.org/pkg/cleveref
 
 ## Avertissements de mise en page
 
