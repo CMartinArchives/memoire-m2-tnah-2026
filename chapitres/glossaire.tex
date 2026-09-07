@@ -1,0 +1,460 @@
+% !TeX root = ../memoire.tex
+
+% -------------------------------------------------------------------
+% Sigles
+% -------------------------------------------------------------------
+
+\newacronym[
+description={Agence nationale chargée de coordonner et de développer les services bibliographiques de l'enseignement supérieur et de la recherche en France, notamment le Sudoc, Calames et IdRef}
+]{abes}
+{Abes}
+{Agence bibliographique de l'enseignement supérieur}
+
+\newacronym[
+description={Interface permettant à des applications ou services informatiques de communiquer et d'échanger des données selon un ensemble défini de règles et de requêtes}
+]{api}
+{API}
+{Application Programming Interface}
+
+\newacronym[
+description={Système d'identification pérenne fondé sur des identifiants associés à des ressources et résolus par l'intermédiaire d'un service permettant de maintenir leur accès malgré les changements d'emplacement}
+]{ark}
+{ARK}
+{Archival Resource Key}
+
+\newacronym[
+description={Réseau professionnel réunissant les archivistes des établissements d'enseignement supérieur, des rectorats, des organismes de recherche et des structures liées aux mouvements étudiants}
+]{aurore}
+{AURORE}
+{Archivistes des universités, rectorats, organismes de recherche et mouvements étudiants}
+
+\newacronym[
+description={Ontologie de référence destinée à représenter et à mettre en relation les informations relatives au patrimoine culturel en décrivant notamment les entités, événements, acteurs, objets, lieux et relations qui les associent}
+]{cidoccrm}
+{CIDOC CRM}
+{CIDOC Conceptual Reference Model}
+
+\newacronym[
+description={Logiciel permettant de créer, organiser, administrer et publier les contenus d'un site web au moyen d'une interface de gestion}
+]{cms}
+{CMS}
+{Content Management System}
+
+\newacronym[
+description={Organisation chargée du développement et de la maintenance des spécifications de métadonnées Dublin Core et des vocabulaires qui leur sont associés}
+]{dcmi}
+{DCMI}
+{Dublin Core Metadata Initiative}
+
+\newacronym[
+description={Direction de l'Université de Montpellier chargée de la culture scientifique et du patrimoine historique}
+]{dcsph}
+{DCSPH}
+{Direction de la culture scientifique et du patrimoine historique}
+
+\newacronym[
+description={Identifiant pérenne principalement utilisé pour identifier et citer durablement des objets numériques, notamment des publications et des données de recherche}
+]{doi}
+{DOI}
+{Digital Object Identifier}
+
+\newacronym[
+description={Direction de l'Université de Montpellier chargée des systèmes d'information, des infrastructures et des services numériques}
+]{dsin}
+{DSIN}
+{Direction des systèmes d'information et du numérique}
+
+\newacronym[
+description={Définition formelle de la structure autorisée d'un document XML, précisant notamment les éléments, attributs et règles d'imbrication qu'il peut contenir}
+]{dtd}
+{DTD}
+{Document Type Definition}
+
+\newacronym[
+description={Standard XML destiné à l'encodage structuré des instruments de recherche archivistiques et à l'échange de leurs descriptions}
+]{ead}
+{EAD}
+{Encoded Archival Description}
+
+\newacronym[
+description={Modèle de données développé pour Europeana afin de représenter et de relier des ressources patrimoniales, leurs représentations numériques, leurs métadonnées et les entités qui leur sont associées}
+]{edm}
+{EDM}
+{Europeana Data Model}
+
+\newacronym[
+description={Ensemble constitué des établissements, organismes, personnels, infrastructures et activités relevant de l'enseignement supérieur et de la recherche}
+]{esr}
+{ESR}
+{Enseignement supérieur et recherche}
+
+\newacronym[
+description={Principes de gestion des données visant à les rendre faciles à trouver, accessibles, interopérables et réutilisables}
+]{fair}
+{FAIR}
+{Findable, Accessible, Interoperable, Reusable}
+
+\newacronym[
+description={Système informatique permettant d'organiser, de gérer, de conserver et de retrouver des documents numériques ainsi que les informations qui leur sont associées}
+]{ged}
+{GED}
+{Gestion électronique de documents}
+
+\newacronym[
+description={Structure de coopération réunissant des partenaires autour d'activités scientifiques communes sans créer une nouvelle personne morale}
+]{gis}
+{GIS}
+{Groupement d'intérêt scientifique}
+
+\newacronym[
+description={Technique de reconnaissance automatique permettant de convertir l'image d'un texte manuscrit en caractères numériques exploitables informatiquement}
+]{htr}
+{HTR}
+{Handwritten Text Recognition}
+
+\newacronym[
+description={Protocole de communication utilisé sur le Web pour transmettre des requêtes et des représentations de ressources entre clients et serveurs}
+]{http}
+{HTTP}
+{Hypertext Transfer Protocol}
+
+\newacronym[
+description={Ensemble de spécifications ouvertes destinées à rendre interopérables la diffusion, la consultation, la comparaison et l'annotation d'images et d'objets numériques provenant d'institutions différentes}
+]{iiif}
+{IIIF}
+{International Image Interoperability Framework}
+
+\newacronym[
+description={Norme internationale définissant les principes de rédaction et de mise en relation des notices d'autorité relatives aux collectivités, aux personnes et aux familles associées aux archives}
+]{isaarcpf}
+{ISAAR(CPF)}
+{Norme internationale sur les notices d'autorité utilisées pour les archives relatives aux collectivités, aux personnes ou aux familles}
+
+\newacronym[
+description={Norme internationale définissant les principes généraux de description archivistique et l'organisation hiérarchique des informations relatives aux fonds et à leurs subdivisions}
+]{isadg}
+{ISAD(G)}
+{\textit{General International Standard Archival Description} (Norme générale et internationale de description archivistique)}
+
+\newacronym[
+description={Norme internationale destinée à la description normalisée des institutions qui conservent des archives et des services qu'elles proposent}
+]{isdiah}
+{ISDIAH}
+{\textit{International Standard for Describing Institutions with Archival Holdings} (Norme internationale pour la description des institutions de conservation des archives)}
+
+\newacronym[
+description={Identifiant normalisé international permettant d'identifier de manière univoque les personnes et les collectivités impliquées dans la création, la production, la gestion ou la diffusion de contenus}
+]{isni}
+{ISNI}
+{International Standard Name Identifier}
+
+\newacronym[
+description={Format textuel structuré permettant de représenter et d'échanger des données sous la forme de paires clé-valeur et de structures imbriquées}
+]{json}
+{JSON}
+{JavaScript Object Notation}
+
+\newacronym[
+description={Format fondé sur JSON permettant d'exprimer des données liées et de représenter explicitement les identifiants, types et relations du Web de données}
+]{jsonld}
+{JSON-LD}
+{JavaScript Object Notation for Linked Data}
+
+\newacronym[
+description={Schéma de métadonnées XML destiné à décrire des objets patrimoniaux et muséaux et à faciliter l'échange de leurs descriptions entre différents systèmes}
+]{lido}
+{LIDO}
+{Lightweight Information Describing Objects}
+
+\newacronym[
+description={Mode de publication ouverte de données structurées sur le Web fondé sur l'utilisation d'identifiants URI et de relations explicites entre ressources afin de permettre leur interconnexion et leur réutilisation}
+]{lod}
+{LOD}
+{Linked Open Data}
+
+\newacronym[
+description={Méthode de traitement automatique permettant de repérer et de catégoriser dans un texte des entités nommées telles que des personnes, lieux, organisations ou dates}
+]{ner}
+{NER}
+{Named Entity Recognition}
+
+\newacronym[
+description={Protocole permettant à un service de collecter automatiquement les métadonnées exposées par des fournisseurs de données afin de les agréger ou de les réutiliser}
+]{oaipmh}
+{OAI-PMH}
+{Open Archives Initiative Protocol for Metadata Harvesting}
+
+\newacronym[
+description={Programme national consacré au repérage, à l'inventaire, à l'étude, à la sauvegarde et à la valorisation du patrimoine scientifique et technique contemporain}
+]{patstec}
+{PATSTEC}
+{Patrimoine scientifique et technique contemporain}
+
+\newacronym[
+description={Identifiant attribué aux bibliothèques et centres de ressources documentaires français afin de les identifier notamment dans les réseaux et services bibliographiques de l'Abes}
+]{rcr}
+{RCR}
+{Répertoire des Centres de Ressources}
+
+\newacronym[
+description={Modèle de données du Web permettant de représenter des informations sous la forme d'un graphe composé de triplets associant un sujet, un prédicat et un objet}
+]{rdf}
+{RDF}
+{Resource Description Framework}
+
+\newacronym[
+description={Style d'architecture permettant à des applications de communiquer avec des ressources accessibles par le Web au moyen d'opérations standardisées, couramment utilisé pour la conception d'API}
+]{rest}
+{REST}
+{Representational State Transfer}
+
+\newacronym[
+description={Identifiant international pérenne destiné aux organisations de recherche et aux institutions qui leur sont associées, afin de permettre leur identification et leur mise en relation entre différents systèmes}
+]{ror}
+{ROR}
+{Research Organization Registry}
+
+\newacronym[
+description={Service interuniversitaire assurant des missions mutualisées de coopération documentaire pour les établissements montpelliérains, notamment dans les domaines des systèmes documentaires et du patrimoine écrit et graphique}
+]{scdi}
+{SCDI}
+{Service de coopération documentaire interuniversitaire}
+
+\newacronym[
+description={Système informatique destiné à gérer les différentes fonctions archivistiques, notamment la description, le classement, la gestion des entrées, la conservation et la communication des archives}
+]{sia}
+{SIA}
+{Système d'information archivistique}
+
+\newacronym[
+description={Service du ministère de la Culture chargé de définir, coordonner et évaluer la politique de l'État en matière d'archives en France}
+]{siaf}
+{SIAF}
+{Service interministériel des Archives de France}
+
+\newacronym[
+description={Modèle permettant de représenter des systèmes d'organisation des connaissances tels que des thésaurus, listes d'autorité ou classifications sous une forme exploitable dans le Web de données}
+]{skos}
+{SKOS}
+{Simple Knowledge Organization System}
+
+\newacronym[
+description={Langage de requête et protocole permettant d'interroger et de manipuler des données représentées sous la forme de graphes RDF}
+]{sparql}
+{SPARQL}
+{SPARQL Protocol and RDF Query Language}
+
+\newacronym[
+description={Consortium et ensemble de recommandations destinés à représenter sous une forme structurée et interopérable les caractéristiques textuelles et documentaires de sources, notamment dans le cadre des éditions numériques}
+]{tei}
+{TEI}
+{Text Encoding Initiative}
+
+\newacronym[
+description={Organisation spécialisée des Nations unies compétente dans les domaines de l'éducation, de la science, de la culture et de la communication}
+]{unesco}
+{UNESCO}
+{Organisation des Nations unies pour l'éducation, la science et la culture}
+
+\newacronym[
+description={Format bibliographique international de la famille MARC destiné à structurer et à échanger des notices bibliographiques et des données associées}
+]{unimarc}
+{UNIMARC}
+{Universal MARC format}
+
+\newacronym[
+description={Identifiant permettant de désigner de manière univoque une ressource ; sur le Web de données, les URI servent notamment à identifier les entités et les propriétés qui les relient}
+]{uri}
+{URI}
+{Uniform Resource Identifier}
+
+\newacronym[
+description={Langage de balisage permettant de représenter des informations sous une forme structurée, hiérarchique et exploitable par différents systèmes informatiques}
+]{xml}
+{XML}
+{Extensible Markup Language}
+
+
+% -------------------------------------------------------------------
+% Termes techniques
+% -------------------------------------------------------------------
+
+\newglossaryentry{alignement}{
+	name={alignement de données},
+	plural={alignements de données},
+	sort={alignement donnees},
+	description={mise en correspondance explicite d'entités, de concepts, de vocabulaires ou de structures provenant de jeux de données ou de référentiels distincts afin d'en faciliter l'interopérabilité}
+}
+
+\newglossaryentry{architecture-documentaire}{
+	name={architecture documentaire},
+	plural={architectures documentaires},
+	sort={architecture documentaire},
+	description={organisation fonctionnelle et technique des données, des outils, des flux et des responsabilités qui concourent à la production, à la conservation, à la maintenance, au signalement, à la diffusion et à la réutilisation de ressources documentaires}
+}
+
+\newglossaryentry{corpus-numerique}{
+	name={corpus numérique},
+	plural={corpus numériques},
+	sort={corpus numerique},
+	description={ensemble délimité de ressources numériques ou numérisées constitué selon des critères documentés en vue de leur consultation, de leur édition ou de leur analyse au moyen de méthodes informatiques}
+}
+
+\newglossaryentry{donnee-autorite}{
+	name={donnée d'autorité},
+	plural={données d'autorité},
+	sort={donnee autorite},
+	description={donnée normalisée servant à identifier sans ambiguïté une personne, une collectivité, une famille, un lieu ou une autre entité ; elle associe généralement une forme privilégiée du nom à ses variantes, à des éléments de contexte, à des relations et à un identifiant pérenne, permettant notamment de rapprocher les ressources qui se rapportent à une même entité}
+}
+
+\newglossaryentry{donnees-liees}{
+	name={donnée liée},
+	plural={données liées},
+	sort={donnees liees},
+	description={donnée structurée publiée selon les principes du Web de données, dans lequel les ressources sont identifiées par des URI, décrites sous une forme exploitable par les machines et reliées à d'autres ressources par des relations explicites afin de permettre la navigation, le rapprochement et la réutilisation des données entre différents systèmes ou jeux de données}
+}
+
+\newglossaryentry{drupal}{
+	name={Drupal},
+	sort={Drupal},
+	description={système de gestion de contenu libre et modulaire permettant de construire et d'administrer des sites web, de structurer leurs contenus et de restituer des données provenant de logiciels métier ou de services extérieurs}
+}
+
+\newglossaryentry{entrepot-donnees}{
+	name={entrepôt de données},
+	plural={entrepôts de données},
+	sort={entrepot donnees},
+	description={infrastructure assurant le dépôt, le stockage, la documentation, l'identification et la mise à disposition de données numériques selon des règles et des modalités d'accès définies}
+}
+
+\newglossaryentry{extraction-entites}{
+	name={extraction d'entités nommées},
+	sort={extraction entites nommees},
+	description={traitement automatique visant à repérer dans un texte des mentions d'entités telles que des personnes, des lieux, des organisations ou des dates et à les associer à des catégories prédéfinies}
+}
+
+\newglossaryentry{fouille-textes}{
+	name={fouille de textes},
+	sort={fouille textes},
+	description={ensemble de méthodes informatiques permettant d'explorer et d'analyser des corpus textuels afin d'en extraire des informations, des régularités, des relations ou des structures difficilement repérables par une lecture exclusivement linéaire}
+}
+
+\newglossaryentry{identifiant-perenne}{
+	name={identifiant pérenne},
+	plural={identifiants pérennes},
+	sort={identifiant perenne},
+	description={identifiant unique et stable associé à une ressource ou à une entité et maintenu indépendamment de son emplacement technique, afin de permettre sa désignation, sa citation et sa mise en relation durable dans différents environnements}
+}
+
+\newglossaryentry{interoperabilite}{
+	name={interopérabilité},
+	sort={interoperabilite},
+	description={capacité de systèmes distincts à échanger, interpréter et réutiliser des données ; elle peut reposer sur des protocoles et formats communs, sur la mise en correspondance de structures de données et, au niveau sémantique, sur une représentation suffisamment explicite du sens des entités et des relations}
+}
+
+\newglossaryentry{manifeste-iiif}{
+	name={manifeste IIIF},
+	plural={manifestes IIIF},
+	sort={manifeste IIIF},
+	description={document structuré en JSON-LD conforme à l'API IIIF Presentation, qui décrit un objet numérique, ses métadonnées, l'ordre de ses différentes vues et les services nécessaires à leur restitution dans une visionneuse compatible}
+}
+
+\newglossaryentry{middleware}{
+	name={middleware},
+	description={logiciel intermédiaire assurant la communication, l'échange ou la transformation de données entre plusieurs applications ou services sans qu'ils aient à interagir directement}
+}
+
+\newglossaryentry{metadonnees}{
+	name={métadonnée},
+	plural={métadonnées},
+	sort={metadonnee},
+	description={donnée structurée décrivant le contenu, le contexte, la structure, la gestion ou les caractéristiques techniques d'une ressource afin d'en permettre l'identification, la recherche, l'administration, l'échange et la réutilisation}
+}
+
+\newglossaryentry{mirador}{
+	name={Mirador},
+	sort={Mirador},
+	description={visionneuse web libre compatible avec IIIF, capable d'interpréter des manifestes pour afficher et parcourir des objets numériques composés d'une ou plusieurs vues, les comparer dans plusieurs fenêtres et exploiter leurs structures de navigation}
+}
+
+\newglossaryentry{moissonnage}{
+	name={moissonnage},
+	sort={moissonnage},
+	description={collecte automatisée et éventuellement périodique de métadonnées exposées par un fournisseur de données selon un protocole d'échange, notamment OAI-PMH, en vue de leur agrégation et de leur réutilisation par un autre service}
+}
+
+\newglossaryentry{ontologie}{
+	name={ontologie},
+	plural={ontologies},
+	sort={ontologie},
+	description={modèle formalisé représentant les entités ou concepts d'un domaine, leurs propriétés et les relations qu'ils entretiennent afin de permettre une interprétation partagée et exploitable informatiquement des données}
+}
+
+\newglossaryentry{profil-application}{
+	name={profil d'application},
+	plural={profils d'application},
+	sort={profil application},
+	description={spécification définissant, pour un contexte d'usage déterminé, un ensemble de propriétés sélectionnées dans un ou plusieurs standards, modèles ou vocabulaires, ainsi que leurs règles d'emploi et leurs contraintes}
+}
+
+\newglossaryentry{provenance-donnees}{
+	name={provenance des données},
+	sort={provenance donnees},
+	description={informations permettant de retracer l'origine d'une donnée, les sources dont elle est issue et les opérations de sélection, de transformation ou d'enrichissement qui ont conduit à son état actuel}
+}
+
+\newglossaryentry{reconciliation}{
+	name={réconciliation de données},
+	sort={reconciliation donnees},
+	description={opération consistant à comparer les valeurs d'un jeu de données avec celles d'un référentiel afin d'identifier les entités correspondantes et, lorsque cela est possible, de leur associer un identifiant commun}
+}
+
+\newglossaryentry{referentiel}{
+	name={référentiel},
+	plural={référentiels},
+	sort={referentiel},
+	description={ensemble organisé et maintenu de données de référence utilisé pour identifier, normaliser ou mettre en relation des entités telles que des personnes, des collectivités, des lieux, des concepts ou des périodes}
+}
+
+\newglossaryentry{retroconversion}{
+	name={rétroconversion},
+	sort={retroconversion},
+	description={transformation d'instruments de recherche ou de catalogues existants, initialement produits dans une forme imprimée ou faiblement structurée, en données normalisées et exploitables informatiquement ; elle comprend l'identification, la mise en correspondance, la restructuration et, si nécessaire, la normalisation des informations}
+}
+
+\newglossaryentry{signalement}{
+	name={signalement},
+	sort={signalement},
+	description={ensemble des opérations de description, d'indexation, de publication et d'échange de métadonnées permettant de rendre une ressource repérable, identifiable et localisable dans un catalogue, un portail ou un réseau documentaire}
+}
+
+\newglossaryentry{taux-erreur-caracteres}{
+	name={taux d'erreur de caractères},
+	sort={taux erreur caracteres},
+	description={mesure de la qualité d'une transcription automatique calculée à partir du nombre de substitutions, suppressions et insertions nécessaires pour faire correspondre le texte produit automatiquement à une transcription de référence}
+}
+
+\newglossaryentry{triplet-rdf}{
+	name={triplet RDF},
+	plural={triplets RDF},
+	sort={triplet RDF},
+	description={unité élémentaire d'une description RDF constituée d'un sujet, d'un prédicat et d'un objet ; le sujet désigne la ressource décrite, le prédicat exprime une propriété ou une relation et l'objet en indique la valeur ou désigne une autre ressource}
+}
+
+\newglossaryentry{verite-terrain}{
+	name={vérité terrain},
+	sort={verite terrain},
+	description={ensemble de données établies ou corrigées manuellement et utilisées comme référence pour entraîner ou évaluer un traitement automatique, notamment un modèle de reconnaissance de texte}
+}
+
+\newglossaryentry{web-semantique}{
+	name={Web sémantique},
+	sort={Web semantique},
+	description={ensemble de modèles et de technologies visant à publier sur le Web des données dont les entités, les propriétés et les relations sont décrites de manière suffisamment explicite pour pouvoir être interprétées et reliées automatiquement}
+}
+
+\newglossaryentry{z3950}{
+	name={Z39.50},
+	sort={Z3950},
+	description={protocole normalisé de type client-serveur permettant d'interroger à distance un catalogue documentaire et de récupérer des notices selon une syntaxe d'échange commune}
+}

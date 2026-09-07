@@ -1,0 +1,276 @@
+% !TeX root = ../memoire.tex
+
+% Réunion de la documentation administrative et des publications
+% institutionnelles dans une même rubrique bibliographique.
+\defbibfilter{documentation-institutionnelle}{
+	keyword=src-administrative
+	or
+	keyword=src-publication-institutionnelle
+}
+
+% Réunion des ensembles historiques conservés par la Mission, sans
+% imposer dans l'état des sources la distinction « fonds ancien /
+% fonds moderne et contemporain », analysée dans le corps du mémoire.
+\defbibfilter{sources-ahfm}{
+	keyword=src-ahfm-ancien
+	or
+	keyword=src-ahfm-moderne
+}
+
+\chapter*{État des sources et bibliographie}
+\addcontentsline{toc}{chapter}{État des sources et bibliographie}
+\markboth{État des sources et bibliographie}{État des sources et bibliographie}
+
+\noindent
+L'état des sources recense les documents directement mobilisés dans ce mémoire. Ils sont répartis en trois ensembles selon leur nature et leurs modalités de transmission : sources manuscrites, sources imprimées et sources numériques. Les sources manuscrites sont présentées par institution de conservation, en plaçant en premier les Archives historiques de la Faculté de médecine, principal dépôt étudié, puis selon les fonds, les séries et les cotes. Lorsqu'un document manuscrit a été consulté sous forme numérisée, il demeure classé d'après sa forme matérielle originale ; l'adresse électronique n'est alors indiquée que comme modalité complémentaire d'accès.
+
+\medskip
+
+\noindent
+Les sources imprimées comprennent les éditions de textes, les instruments de recherche, la documentation administrative et institutionnelle ainsi que les textes législatifs et réglementaires utilisés comme matériaux de l'étude. Les sources numériques rassemblent, quant à elles, les contenus nativement publiés en ligne, notamment les sites institutionnels, les normes et documentations techniques, les portails documentaires et les infrastructures de recherche.
+
+\medskip
+
+\noindent
+La bibliographie réunit les travaux scientifiques mobilisés pour les dimensions historique, archivistique et technique de l'étude. Conformément aux règles de présentation de l'École nationale des chartes, elle est organisée par thèmes ; les références sont classées alphabétiquement à l'intérieur de chaque rubrique.
+
+% ===================================================================
+% ÉTAT DES SOURCES
+% ===================================================================
+
+\section*{État des sources}
+\addcontentsline{toc}{section}{État des sources}
+
+% -------------------------------------------------------------------
+% Sources manuscrites
+% -------------------------------------------------------------------
+
+\subsection*{Sources manuscrites}
+\addcontentsline{toc}{subsection}{Sources manuscrites}
+
+% Les normes de l'École des chartes prescrivent de ne pas employer
+% l'italique pour les références de sources manuscrites. Cette
+% modification est limitée aux trois listes qui suivent et ne touche
+% donc ni les sources imprimées ni la bibliographie scientifique.
+\begingroup
+\DeclareFieldFormat[unpublished]{title}{#1}
+\DeclareFieldFormat[unpublished]{subtitle}{#1}
+
+\subsubsection*{Archives historiques de la Faculté de médecine de Montpellier}
+
+\noindent
+Les ensembles décrits ci-dessous relèvent des archives publiques de l'Université de Montpellier. Ils sont présentés selon les fonds, puis selon les séries et les cotes du cadre de classement.
+
+% Cette notice est appelée ici, car l'état des sources est imprimé
+% avant sa citation dans le corps du mémoire.
+\nocite{Statuts1383AHFM}
+
+\printbibliography[
+heading=none,
+filter=sources-ahfm
+]
+
+\paragraph{Documents de pilotage et de suivi de la Mission Archives historiques}
+
+\printbibliography[
+heading=none,
+keyword=src-ahfm-fonctionnement
+]
+
+\subsubsection*{Archives départementales de l'Hérault, Montpellier}
+
+% Cette notice est appelée ici, car l'état des sources est imprimé
+% avant sa citation dans le corps du mémoire.
+\nocite{Statuts1383ADH}
+
+\printbibliography[
+heading=none,
+keyword=src-man-adh
+]
+
+\subsubsection*{Archives municipales de Montpellier}
+
+\printbibliography[
+heading=none,
+keyword=src-man-amm
+]
+
+\endgroup
+
+\newpage
+
+% -------------------------------------------------------------------
+% Sources imprimées
+% -------------------------------------------------------------------
+
+\subsection*{Sources imprimées}
+\addcontentsline{toc}{subsection}{Sources imprimées}
+
+\subsubsection*{Éditions de sources}
+
+\paragraph{\emph{Cartulaire de l'Université de Montpellier}, tome I}
+
+% Le volume est cité explicitement afin de garantir son impression
+% en tête des actes qui en sont extraits.
+\nocite{GermainUniversite1890}
+
+\printbibliography[
+heading=none,
+keyword=src-cartulaire-tome1
+]
+
+% Les sous-notices correspondant aux actes édités dans le premier tome
+% sont imprimées immédiatement après la notice du volume.
+\nocite{GuilhemVIII1181,Conrad1220,Statuts1240,AlexandreIV1258,Certificat1260,NicolasIV1289,ClementVAuteurs1309,ClementVChancelier1309,ClementVLicence1309,JeanXXII1323,Statuts1335,Statuts1340,JeanSaintMarc1364,RequeteEtudiants1390,PresentationCadavres1396}
+
+\printbibliography[
+heading=none,
+keyword=src-cartulaire-actes
+]
+
+\paragraph{\emph{Cartulaire de l'Université de Montpellier}, tome II}
+
+\nocite{CalmetteCartulaire1912}
+
+\printbibliography[
+heading=none,
+keyword=src-cartulaire-tome2
+]
+
+\paragraph{Textes et œuvres édités}
+
+\printbibliography[
+heading=none,
+keyword=src-imprimee
+]
+
+\subsubsection*{Instruments de recherche}
+
+\printbibliography[
+heading=none,
+keyword=src-instruments
+]
+
+\subsubsection*{Documentation administrative et institutionnelle}
+
+% Ce filtre réunit les documents de travail, rapports, feuilles de route
+% et publications institutionnelles dans une seule liste alphabétique.
+\printbibliography[
+heading=none,
+filter=documentation-institutionnelle
+]
+
+\subsubsection*{Textes législatifs et réglementaires}
+
+\printbibliography[
+heading=none,
+keyword=src-juridique
+]
+
+\newpage
+
+% -------------------------------------------------------------------
+% Sources numériques
+% -------------------------------------------------------------------
+
+\subsection*{Sources numériques}
+\addcontentsline{toc}{subsection}{Sources numériques}
+
+\subsubsection*{Université de Montpellier et établissements montpelliérains}
+
+\printbibliography[
+heading=none,
+keyword=src-num-um
+]
+
+\subsubsection*{Normes, standards et protocoles}
+
+\printbibliography[
+heading=none,
+keyword=src-num-normes
+]
+
+\subsubsection*{Portails documentaires et infrastructures de recherche}
+
+\printbibliography[
+heading=none,
+keyword=src-num-plateformes
+]
+
+\subsubsection*{Logiciels et documentation technique}
+
+\printbibliography[
+heading=none,
+keyword=src-num-logiciels
+]
+
+\subsubsection*{Réseaux professionnels et formation}
+
+\printbibliography[
+heading=none,
+keyword=src-num-reseaux-pro
+]
+
+\subsubsection*{Publications professionnelles et études de cas en ligne}
+
+\printbibliography[
+heading=none,
+keyword=src-num-publications
+]
+
+\newpage
+
+% ===================================================================
+% BIBLIOGRAPHIE
+% ===================================================================
+
+\section*{Bibliographie}
+\addcontentsline{toc}{section}{Bibliographie}
+
+\subsection*{Montpellier et l'enseignement médical}
+\addcontentsline{toc}{subsection}{Montpellier et l'enseignement médical}
+
+\printbibliography[
+heading=none,
+keyword=bib-montpellier
+]
+
+\subsection*{Histoire des archives et pratiques archivistiques}
+\addcontentsline{toc}{subsection}{Histoire des archives et pratiques archivistiques}
+
+\printbibliography[
+heading=none,
+keyword=bib-histoire-archives
+]
+
+\subsection*{Description archivistique et interopérabilité}
+\addcontentsline{toc}{subsection}{Description archivistique et interopérabilité}
+
+\printbibliography[
+heading=none,
+keyword=bib-description
+]
+
+\subsection*{Diffusion numérique, médiation et publics}
+\addcontentsline{toc}{subsection}{Diffusion numérique, médiation et publics}
+
+\printbibliography[
+heading=none,
+keyword=bib-diffusion
+]
+
+\subsection*{Patrimoine universitaire et collections scientifiques}
+\addcontentsline{toc}{subsection}{Patrimoine universitaire et collections scientifiques}
+
+\printbibliography[
+heading=none,
+keyword=bib-patrimoine-universitaire
+]
+
+\subsection*{Réseaux documentaires et infrastructures de recherche}
+\addcontentsline{toc}{subsection}{Réseaux documentaires et infrastructures de recherche}
+
+\printbibliography[
+heading=none,
+keyword=bib-infrastructures
+]

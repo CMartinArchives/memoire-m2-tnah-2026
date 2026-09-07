@@ -1,0 +1,322 @@
+% !TeX program = xelatex
+% !BIB program = biber
+
+% -------------------------------------------------------------------
+% ORGANISATION ET CHOIX DE MISE EN FORME DU MÉMOIRE
+% -------------------------------------------------------------------
+%
+% Le mémoire est organisé autour d'un document maître, memoire.tex,
+% qui contient le préambule et appelle par \input les différents
+% fichiers placés dans le dossier chapitres : page de titre, résumé,
+% remerciements, état des sources et bibliographie, introduction,
+% trois parties, conclusion, annexes et glossaire. La base
+% bibliographique est conservée séparément dans bibliographie.bib ;
+% les ressources graphiques appelées dans le mémoire sont regroupées
+% dans le dossier images.
+%
+% Plusieurs solutions ont été combinées pour adapter la mise en page
+% à la nature des données présentées. Les tableaux utilisent notamment
+% tabularx pour ajuster leur largeur à l'espace disponible, array pour
+% définir précisément le comportement des colonnes, booktabs pour la
+% composition typographique de certains tableaux et longtable pour les
+% tableaux devant se poursuivre sur plusieurs pages. Les espacements
+% entre colonnes et entre lignes sont ponctuellement adaptés avec
+% \tabcolsep et \arraystretch.
+%
+% Les tableaux et schémas trop larges pour une page en portrait sont
+% placés en paysage au moyen de sidewaystable (package rotating) ou de
+% l'environnement landscape (package pdflscape). Dans la perspective
+% d'une consultation imprimée en recto-verso, l'orientation de certains
+% éléments en paysage a été adaptée à leur position dans le volume afin
+% que le haut du contenu soit tourné vers l'extérieur du livre. La
+% commande \rotatebox{180}{...} est notamment utilisée pour inverser
+% ponctuellement un contenu déjà placé dans une page paysage. Ce choix
+% destiné à faciliter la lecture de l'exemplaire imprimé peut donc donner,
+% lors d'une lecture page par page du PDF, l'impression que certaines
+% figures sont orientées dans le sens opposé.
+%
+% Les schémas ne relèvent pas tous de simples images importées. Le graphe
+% de modélisation CIDOC CRM présenté en annexe est construit directement
+% en LaTeX avec TikZ. Des styles de nœuds distincts y représentent les
+% personnes, activités, temporalités, documents, objets matériels et
+% objets linguistiques ; les propriétés du CIDOC CRM sont représentées
+% par des relations fléchées et étiquetées. Les bibliothèques TikZ
+% positioning et arrows.meta permettent respectivement le positionnement
+% relatif des nœuds et la définition des flèches ; \resizebox est utilisé
+% pour adapter l'ensemble aux dimensions de la page.
+%
+% Le document comporte enfin plusieurs personnalisations supplémentaires :
+% en-têtes différenciés selon les pages paires et impaires avec fancyhdr,
+% commandes personnelles pour définir des titres abrégés dans les
+% en-têtes, glossaire et liste de sigles générés avec glossaries, et
+% renvois internes améliorés avec cleveref.
+% -------------------------------------------------------------------
+
+
+\documentclass[12pt,a4paper,twoside]{book}
+
+% Gestion des polices avec XeLaTeX
+\usepackage{fontspec}
+
+% Gestion du français et de l’anglais
+\usepackage[english,french]{babel}
+
+% Gestion contextuelle des guillemets, notamment avec biblatex
+\usepackage{csquotes}
+
+% Réglage des marges du document
+\usepackage[margin=2.5cm]{geometry}
+
+% Réglage de l’interligne
+\usepackage{setspace}
+\onehalfspacing
+
+% Contrôle de l’espace nécessaire avant certains éléments
+\usepackage{needspace}
+
+% Création de schémas arborescents
+\usepackage{forest}
+
+% Création de schémas et de graphes vectoriels directement en LaTeX ;
+% utilisé notamment pour le graphe de modélisation CIDOC CRM en annexe
+\usepackage{tikz}
+
+% Positionnement relatif des nœuds et personnalisation des flèches TikZ
+\usetikzlibrary{positioning,arrows.meta}
+
+% Placement précis de certains éléments flottants
+\usepackage{float}
+
+% Mise en forme des paragraphes
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{4pt}
+\raggedbottom
+
+% Contrôle du franchissement des sections par les éléments flottants
+\usepackage{placeins}
+
+% Insertion, redimensionnement et rotation ponctuelle des éléments graphiques ;
+% fournit notamment \resizebox et \rotatebox
+\usepackage{graphicx}
+
+% Amélioration typographique des tableaux, notamment avec
+% \toprule, \midrule et \bottomrule
+\usepackage{booktabs}
+
+% Rotation de tableaux ou de figures ;
+% fournit notamment l'environnement sidewaystable
+\usepackage{rotating}
+
+% Création de tableaux ajustés automatiquement à la largeur disponible
+% grâce notamment au type de colonne X
+\usepackage{tabularx}
+
+% Définition et personnalisation des types de colonnes des tableaux ;
+% utilisé notamment avec \raggedright\arraybackslash
+\usepackage{array}
+
+% Création de tableaux répartis sur plusieurs pages
+\usepackage{longtable}
+
+% Rotation de pages entières pour les tableaux et figures en paysage
+\usepackage{pdflscape}
+
+% Personnalisation des en-têtes et des pieds de page
+\usepackage{fancyhdr}
+
+% Gestion des légendes des figures et des tableaux ;
+% permet notamment l'emploi de \captionof lorsque nécessaire
+\usepackage{caption}
+
+% Gestion de la bibliographie avec Biber selon le style de l’École des chartes
+\usepackage[
+backend=biber,
+style=enc,
+maxbibnames=10,
+sorting=nyt
+]{biblatex}
+
+% Base de données bibliographique
+\addbibresource{bibliographie.bib}
+
+% Création de liens internes et externes sans bordures visibles
+\usepackage[hidelinks]{hyperref}
+
+% Création d’un glossaire et d’une liste des sigles
+\usepackage[
+acronym,
+toc,
+nopostdot
+]{glossaries}
+
+% Préparation des fichiers auxiliaires du glossaire
+\makeglossaries
+
+% Définitions des sigles et des termes techniques dans un fichier séparé
+\input{chapitres/glossaire}
+
+% Amélioration automatique et harmonisation des renvois internes ;
+% package non traité dans le cours et utilisé ici en complément de hyperref
+\usepackage[capitalise,noabbrev]{cleveref}
+
+
+% ------------------------
+% En-têtes et pieds de page
+% ------------------------
+
+% Style propre aux pages courantes du corps du mémoire
+\fancypagestyle{memoire}{%
+	\fancyhf{}
+	
+	% Titre abrégé du chapitre sur les pages paires
+	\fancyhead[LE]{%
+		\small\itshape\nouppercase{\leftmark}%
+	}
+	
+	% Titre abrégé de la section sur les pages impaires
+	\fancyhead[RO]{%
+		\small\itshape\nouppercase{\rightmark}%
+	}
+	
+	% Numéro de page placé vers l’extérieur, en pied de page
+	\fancyfoot[LE,RO]{\thepage}
+	
+	% Filet discret sous l’en-tête
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+% Hauteur suffisante pour éviter les avertissements de fancyhdr
+\setlength{\headheight}{15pt}
+
+% Forme des titres de chapitre dans les en-têtes
+\renewcommand{\chaptermark}[1]{%
+	\markboth{Chapitre \thechapter\ -- #1}{}%
+}
+
+% Forme des titres de section dans les en-têtes
+\renewcommand{\sectionmark}[1]{%
+	\markright{\thesection\quad #1}%
+}
+
+% Les premières pages des chapitres ne comportent pas d’en-tête ;
+% leur numéro est centré en pied de page.
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+
+% -------------------------------------------------------------------
+% COMMANDES PERSONNELLES
+% -------------------------------------------------------------------
+%
+% Ces deux commandes permettent de définir manuellement une version
+% abrégée du titre d'un chapitre ou d'une section dans les en-têtes,
+% sans modifier le titre développé affiché dans le corps du mémoire
+% ni celui enregistré dans la table des matières.
+
+\newcommand{\chapitrecourt}[1]{%
+	\chaptermark{#1}%
+}
+
+\newcommand{\sectioncourte}[1]{%
+	\sectionmark{#1}%
+}
+
+
+% ------------------------
+% Table des matières
+% ------------------------
+
+% Affichage des chapitres, sections et sous-sections
+\setcounter{tocdepth}{2}
+
+% Élargissement de la zone réservée aux numéros de page,
+% nécessaire lorsque la pagination comporte trois chiffres
+\makeatletter
+\renewcommand{\@pnumwidth}{2.5em}
+\renewcommand{\@tocrmarg}{4em}
+\makeatother
+
+
+\begin{document}
+	
+	% Page de titre
+	\input{chapitres/page-titre}
+	
+	
+	% ------------------------
+	% Pages liminaires numérotées en chiffres romains
+	% ------------------------
+	
+	\frontmatter
+	\pagestyle{plain}
+	
+	% Résumé du mémoire
+	\input{chapitres/resume}
+	
+	% Remerciements
+	\input{chapitres/remerciements}
+	
+	% État des sources et bibliographie thématique
+	\input{chapitres/bibliographie}
+	
+	
+	% ------------------------
+	% Corps du mémoire numéroté en chiffres arabes
+	% ------------------------
+	
+	\mainmatter
+	\pagestyle{memoire}
+	
+	% Introduction générale
+	\input{chapitres/introduction}
+	
+	% Première partie
+	\input{chapitres/partie1}
+	
+	% Deuxième partie
+	\input{chapitres/partie2}
+	
+	% Troisième partie
+	\input{chapitres/partie3}
+	
+	% Conclusion générale
+	\input{chapitres/conclusion}
+	
+	
+	% ------------------------
+	% Annexes
+	% ------------------------
+	
+	\appendix
+	\pagestyle{memoire}
+	
+	\input{chapitres/annexes}
+	
+	
+	% ------------------------
+	% Éléments de fin
+	% ------------------------
+	
+	\backmatter
+	\pagestyle{plain}
+	
+	% Liste alphabétique des sigles employés
+	\printglossary[
+	type=\acronymtype,
+	title={Liste des sigles}
+	]
+	
+	% Glossaire des principaux termes techniques effectivement employés
+	\printglossary[
+	title={Glossaire}
+	]
+	
+	% Table des matières placée à la fin selon les modèles TNAH
+	\tableofcontents
+	
+\end{document}
