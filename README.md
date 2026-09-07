@@ -6,7 +6,7 @@ Mémoire réalisé dans le cadre du Master 2 Technologies numériques appliquée
 
 ## Contenu du dépôt
 
-Le dépôt contient l'ensemble des fichiers nécessaires à la consultation et à la compilation du mémoire :
+Le dépôt contient les fichiers nécessaires à la consultation et à la compilation du mémoire :
 
 - `memoire.tex` : document maître ;
 - `chapitres/` : fichiers `.tex` constituant le mémoire :
@@ -42,26 +42,30 @@ xelatex -interaction=nonstopmode memoire.tex
 xelatex -interaction=nonstopmode memoire.tex
 ```
 
-Le style bibliographique `enc`, nécessaire à la compilation, est fourni directement dans le dépôt (`enc.bbx` et `enc.cbx`) afin que le projet soit autonome.
+Une passe supplémentaire de XeLaTeX peut être nécessaire lors d'une première compilation complète pour stabiliser la pagination et les références.
 
-La compilation finale aboutit sans erreur, sans référence ou citation indéfinie et sans demande de nouvelle passe de XeLaTeX ou de Biber.
+Le style bibliographique `enc`, nécessaire à la compilation, est fourni directement dans le dépôt (`enc.bbx` et `enc.cbx`).
+
+La compilation a été testée à partir d'un nouveau clone du dépôt. Après stabilisation, elle aboutit sans erreur, sans référence ou citation indéfinie et sans demande de nouvelle passe de XeLaTeX ou de Biber.
 
 ## Appropriation personnelle de LaTeX
 
-Au-delà de la structure du document maître fourni dans le cadre du cours, la mise en forme du mémoire a fait l'objet de plusieurs adaptations développées en fonction des besoins propres au document. Ces choix sont également documentés par des commentaires dans `memoire.tex`.
+À partir du document maître fourni dans le cadre du cours, j'ai adapté la mise en forme aux besoins particuliers du mémoire. Les principaux choix sont également expliqués dans les commentaires de `memoire.tex`.
 
-Ils comprennent notamment :
+J'ai notamment utilisé :
 
-- la combinaison de plusieurs environnements de tableaux (`tabularx`, `array`, `booktabs` et `longtable`) afin d'adapter leur composition à la nature et à la longueur des données présentées ;
-- une gestion spécifique des tableaux et figures en orientation paysage avec `rotating` et `pdflscape`. Pour la consultation imprimée en recto-verso, certains éléments sont volontairement orientés en fonction de leur position dans le volume afin que le haut du contenu soit tourné vers l'extérieur du livre ;
-- la réalisation directe en LaTeX, avec TikZ, du graphe de modélisation CIDOC CRM présenté en annexe, avec définition de styles de nœuds et représentation des relations entre entités ;
-- la personnalisation des en-têtes et pieds de page avec `fancyhdr`, en distinguant pages paires et impaires ;
-- la création des commandes personnelles `\chapitrecourt` et `\sectioncourte`, qui permettent d'employer dans les en-têtes des versions abrégées des titres sans modifier les titres développés dans le corps du mémoire ni leurs entrées dans la table des matières ;
-- l'utilisation de `cleveref`, en complément de `hyperref`, pour améliorer et harmoniser les renvois internes. Ce package constitue notamment un ajout par rapport aux éléments étudiés dans le cours.
+- plusieurs outils pour les tableaux (`tabularx`, `array`, `booktabs` et `longtable`), selon leur taille et leur contenu ;
+- `rotating` et `pdflscape` pour les tableaux et figures en orientation paysage. Certains éléments sont volontairement tournés différemment selon leur place dans le volume, afin que leur haut soit orienté vers l'extérieur lors d'une impression recto-verso ;
+- TikZ pour réaliser directement en LaTeX le graphe de modélisation CIDOC CRM présenté en annexe, avec des styles différents pour les types de nœuds et les relations ;
+- `fancyhdr` pour personnaliser les en-têtes et les pieds de page et distinguer les pages paires et impaires ;
+- les commandes personnelles `\chapitrecourt` et `\sectioncourte` pour donner une version abrégée de certains titres dans les en-têtes, sans modifier le titre complet dans le texte ou dans la table des matières ;
+- `cleveref`, en complément de `hyperref`, pour faciliter et uniformiser les renvois internes. Ce package n'avait pas été abordé dans le cours.
 
-Ces adaptations répondent aux contraintes particulières d'un mémoire comportant de nombreux tableaux, schémas, annexes et références croisées, et destiné à une consultation à la fois numérique et imprimée.
+Ces adaptations m'ont surtout permis de gérer les nombreux tableaux, schémas, annexes et renvois du mémoire, ainsi que sa consultation à l'écran et son impression.
 
 ### Documentation consultée
+
+Pour ces adaptations, je me suis notamment appuyée sur la documentation des packages utilisés :
 
 - `tabularx` : https://ctan.org/pkg/tabularx
 - `rotating` : https://ctan.org/pkg/rotating
@@ -72,14 +76,14 @@ Ces adaptations répondent aux contraintes particulières d'un mémoire comporta
 
 ## Avertissements de mise en page
 
-Le journal de compilation peut néanmoins contenir certains avertissements (`warnings`) qui ne constituent pas des erreurs de compilation.
+La compilation peut encore produire certains avertissements (`warnings`). Ils ne correspondent pas à des erreurs de compilation et ont été vérifiés dans le PDF final. Certains ont été conservés pour éviter de modifier une mise en page déjà satisfaisante.
 
-Plusieurs ont été conservés volontairement après vérification de la version PDF finale afin de ne pas altérer une mise en page choisie et stabilisée, notamment :
+Il s'agit notamment :
 
-- des avertissements `Float too large for page` concernant certaines figures et certains tableaux dont les dimensions ont été volontairement maintenues afin de préserver leur lisibilité et leur composition, en particulier pour les éléments complexes ou présentés en orientation paysage ;
-- des avertissements `fancyhdr` relatifs à la hauteur réservée aux en-têtes. La modification globale de `\headheight` aurait entraîné une modification de la géométrie et de la pagination du document ; les en-têtes étant correctement affichés dans la version finale, leur paramétrage a été conservé ;
-- des avertissements `Overfull \hbox` et `Underfull \hbox`, principalement liés à des contenus peu flexibles (références bibliographiques, URL, tableaux, légendes ou autres éléments contraints). Ils ont été conservés lorsqu'ils n'entraînaient pas de défaut visuel problématique dans le PDF ;
-- des avertissements de `hyperref` (`Token not allowed in a PDF string`) liés à la conversion de certaines commandes LaTeX présentes dans les titres en chaînes destinées aux signets PDF ; ils n'affectent pas la composition imprimée du document ;
-- quelques avertissements `biblatex` de type `Nested notes`, liés à l'emploi de citations dans des contextes de notes imbriquées et sans incidence sur la résolution des références bibliographiques.
+- de `Float too large for page` pour quelques figures et tableaux légèrement plus grands que l'espace normalement disponible. Leur taille a été conservée pour garder les éléments lisibles, notamment en orientation paysage ;
+- d'avertissements de `fancyhdr` concernant la hauteur des en-têtes. Les en-têtes s'affichant correctement, je n'ai pas modifié globalement `\headheight`, ce qui aurait également modifié la mise en page et la pagination ;
+- de `Overfull \hbox` et `Underfull \hbox`, principalement dans des passages où LaTeX dispose de peu de possibilités pour ajuster les lignes (URL, références bibliographiques, tableaux, légendes, etc.). Ils ont été conservés lorsqu'aucun problème visuel important n'apparaissait dans le PDF ;
+- d'avertissements de `hyperref` (`Token not allowed in a PDF string`), liés à certaines commandes LaTeX présentes dans les titres et à leur conversion pour les signets du PDF. Ils n'affectent pas le texte affiché dans le document ;
+- de quelques avertissements `biblatex` de type `Nested notes`, liés à des citations placées dans des notes déjà imbriquées. Ils n'empêchent pas la résolution des références bibliographiques.
 
-Ces avertissements ont donc été distingués des erreurs de compilation. La version finale a été compilée jusqu'à stabilisation complète des références croisées et de la bibliographie.
+La version finale a été compilée jusqu'à stabilisation de la pagination, des références croisées et de la bibliographie.
