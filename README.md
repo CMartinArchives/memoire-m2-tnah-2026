@@ -46,6 +46,22 @@ Le style bibliographique `enc`, nécessaire à la compilation, est fourni direct
 
 La compilation finale aboutit sans erreur, sans référence ou citation indéfinie et sans demande de nouvelle passe de XeLaTeX ou de Biber.
 
+## Appropriation personnelle de LaTeX
+
+Au-delà de la structure du document maître fourni dans le cadre du cours, la mise en forme du mémoire a fait l'objet de plusieurs adaptations développées en fonction des besoins propres au document. Ces choix sont également documentés par des commentaires dans `memoire.tex`.
+
+Ils comprennent notamment :
+
+- la combinaison de plusieurs environnements de tableaux (`tabularx`, `array`, `booktabs` et `longtable`) afin d'adapter leur composition à la nature et à la longueur des données présentées ;
+- une gestion spécifique des tableaux et figures en orientation paysage avec `rotating` et `pdflscape`. Pour la consultation imprimée en recto-verso, certains éléments sont volontairement orientés en fonction de leur position dans le volume afin que le haut du contenu soit tourné vers l'extérieur du livre ;
+- la réalisation directe en LaTeX, avec TikZ, du graphe de modélisation CIDOC CRM présenté en annexe, avec définition de styles de nœuds et représentation des relations entre entités ;
+- la personnalisation des en-têtes et pieds de page avec `fancyhdr`, en distinguant pages paires et impaires ;
+- la création des commandes personnelles `\chapitrecourt` et `\sectioncourte`, qui permettent d'employer dans les en-têtes des versions abrégées des titres sans modifier les titres développés dans le corps du mémoire ni leurs entrées dans la table des matières ;
+- la génération d'un glossaire et d'une liste de sigles avec `glossaries` ;
+- l'utilisation de `cleveref`, en complément de `hyperref`, pour améliorer et harmoniser les renvois internes. Ce package constitue notamment un ajout par rapport aux éléments étudiés dans le cours.
+
+Ces adaptations visent à conserver une source structurée et réutilisable tout en répondant aux contraintes particulières d'un mémoire comportant de nombreux tableaux, schémas, annexes, références croisées et éléments destinés à une consultation à la fois numérique et imprimée.
+
 ## Avertissements de mise en page
 
 Le journal de compilation peut néanmoins contenir certains avertissements (`warnings`) qui ne constituent pas des erreurs de compilation.
